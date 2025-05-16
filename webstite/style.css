@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'JetBrains Mono';font-size: 22px;
-    
 }
 
 colors{
@@ -13,7 +12,6 @@ colors{
     --nav: #DDBEA9;
     --back: #6E6658;
     --dark: #3F3F37;
-
 }
 body{
     background-color: #F8F2E3;
@@ -106,28 +104,51 @@ body{
 .landing{
     background: #6E6658;
     padding: 2rem;
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
+.window_pix,
 .window_about_me {
-    background: #c5c5c5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    padding: 1rem;
-    aspect-ratio: 531 / 602;
-    width: 90vw;           /* Responsive width */
-    max-width: 531px;      /* Optional cap */
-    border-radius: 8px;
-    margin
+    position: absolute;
+    max-width: 30vw;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.window_pix {
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+    top: 10vh;
+    left: 50vw;
+    z-index: 1;
+}
+
+
+.window_about_me {
+    top: 20vh;
+    left: 25vw;
+    z-index: 2;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+}
+
+.email_icon {
+    position: absolute;
+    top: 45vh;
+    left: 60vw;
+    z-index: 3;
+    max-width: 2vw;
+    height: auto;
+    transition: all 0.3s ease;
+    filter: invert(93%) sepia(12%) saturate(571%) hue-rotate(320deg) brightness(107%) contrast(94%);
 }
 
 .main{
-    background: #F8F2E3;
+    background: var(--white);
     padding: 2rem;
     min-height: 100vh;
 }
+
+
+
 
 @media screen and (max-width: 960px) {
     .navbar__container{
@@ -186,6 +207,7 @@ body{
         width: 100%;
         display: table;
     }
+
 
     #mobile-menu {
         position: absolute;
