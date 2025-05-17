@@ -120,25 +120,103 @@ body{
     top: 10vh;
     left: 50vw;
     z-index: 1;
+    padding-top: 1vh;
 }
 
 
 .window_about_me {
+    padding-top: 1vh;
     top: 20vh;
     left: 25vw;
     z-index: 2;
     filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
-
-.email_icon {
+.contact-section {
     position: absolute;
-    top: 45vh;
-    left: 60vw;
+    /* Adjust these values to move the entire section */
+    top: 60vh;     /* Move up/down: decrease to move up, increase to move down */
+    left: 62vw;    /* Move left/right: decrease to move left, increase to move right */
     z-index: 3;
-    max-width: 2vw;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.email-container {
+    position: relative;
+}
+
+.email-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #F8F2E3;
+    text-decoration: none;
+    font-size: 0.4rem;
+    cursor: pointer;
     transition: all 0.3s ease;
-    filter: invert(93%) sepia(12%) saturate(571%) hue-rotate(320deg) brightness(107%) contrast(94%);
+
+    border-radius: 40px;
+    backdrop-filter: blur(5px);
+}
+
+.email-link:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    
+}
+
+.email-link i {
+    font-size: 1.1rem;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2D2A2A;
+    color: #F8F2E3;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #F8F2E3;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon i {
+    font-size: 1.2rem;
 }
 
 .main{
@@ -147,8 +225,70 @@ body{
     min-height: 100vh;
 }
 
+.download-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2D2A2A;
+    color: #F8F2E3;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideInUp 0.5s ease-out;
+    z-index: 1000;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s, visibility 1s;
+    /* Add background to hide page content */
+    background-color: #2D2A2A; /* Match your page background */
+    z-index: 9999;            /* High z-index to appear above everything */
+}
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #6C8A9C;
+    border-top-color: #F8F2E3;    /* Using your theme color */
+    border-radius: 50%;
+    animation: loading 3s ease infinite;
+}
+
+@keyframes loading{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
 
 @media screen and (max-width: 960px) {
     .navbar__container{
@@ -246,4 +386,4 @@ body{
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-}
+    }

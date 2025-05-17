@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="loader"></div>
     <nav class="navbar">
         <div class="navbar__container">
             <a id="navbar__logo">vinn</a>
@@ -32,11 +33,32 @@
         <div class="window_about_me">
             <img src="about_me.svg" alt="about me." style="width: 100%; height: auto;">
         </div>
-        <div class="email_icon">
-            <img src="/all website items/email-1572-svgrepo-com.svg" alt="Email Icon" style="width: 100%; height: auto;">
-        </div>
 
-        </nav>
+        <script src="app.js"></script>
+        <div class="contact-section">
+            <div class="email-container">
+                <a href="javascript:void(0)" class="email-link" onclick="copyEmail()" title="Click to copy email">
+                    <i class="fas fa-envelope"></i>
+                    <span id="email-text">vincetchan302@gmail.com</span>
+                </a>
+                <span id="copy-tooltip" class="copy-tooltip">Copied!</span>
+            </div>
+            
+            <div class="social-icons">
+                <a href="VincentChan_CV.pdf" download="VincentChan_CV.pdf" title="Download CV" class="social-icon">
+                    <img src="all website items\iconmonstr-cv-3.svg" style="height: 2rem; filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(4062%) hue-rotate(305deg) brightness(112%) contrast(95%);">
+                </a>
+                <a href="https://www.linkedin.com/in/vincent-chan-1ab2a5318/" target="_blank" title="LinkedIn" class="social-icon">
+                    <img src="all website items/iconmonstr-linkedin-3.svg" style="height: 2rem; filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(4062%) hue-rotate(305deg) brightness(112%) contrast(95%);">
+                </a>
+                <a href="https://github.com/maguro-24" target="_blank" title="GitHub" class="social-icon">
+                    <img src="all website items/github-mark/github-mark.svg" style="height: 2rem; filter: brightness(0) saturate(100%) invert(97%) sepia(3%) saturate(4062%) hue-rotate(305deg) brightness(112%) contrast(95%);">
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <nav class="main">
         
     </nav>
